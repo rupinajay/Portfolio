@@ -1,3 +1,3 @@
 # Portfolio
 
-Starting to learn Web Dev.
+This repo is to start learning web dev by exploring things and creating a portfolio website.
