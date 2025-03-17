@@ -110,13 +110,12 @@ export default function ExperiencePage() {
     }
 
     const newExperiences = [...experiences]
-    const targetIndex =
-      direction === "up"
-        ? index - 1
-        : (index + 1
-    
+    const targetIndex = direction === "up" ? index - 1 : index + 1
+
     // Swap the experiences
-    [newExperiences[index], newExperiences[targetIndex]] = [newExperiences[targetIndex], newExperiences[index]])
+    const temp = newExperiences[index]
+    newExperiences[index] = newExperiences[targetIndex]
+    newExperiences[targetIndex] = temp
 
     // Update the order
     newExperiences.forEach((exp, i) => {
@@ -229,4 +228,3 @@ export default function ExperiencePage() {
     </div>
   )
 }
-
