@@ -105,9 +105,10 @@ export const BackgroundBeamsFast = React.memo(({ className }: { className?: stri
                 y2: ["0%", `${93 + Math.random() * 8}%`],
               }}
               transition={{
-                duration: Math.random() * 2 + 3,
+                duration: Math.random() * 5 + 8,
                 ease: "easeInOut",
-                repeat: Number.POSITIVE_INFINITY
+                repeat: Number.POSITIVE_INFINITY,
+                delay: 0
               }}
             >
               <stop stopColor="#18CCFC" stopOpacity="0"></stop>

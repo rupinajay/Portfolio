@@ -11,6 +11,11 @@ export default function AboutPage() {
       icon: Code,
     },
     {
+      title: "AI & ML",
+      description: "Generative AI, RAGs, LLM, Classification & Regression Models, Deep Learning, NLP",
+      icon: Brain,
+    },
+    {
       title: "Databases",
       description: "MySQL, MongoDB, PostgreSQL, PineconeDB, Qdrant, MilvusDB",
       icon: Database,
@@ -19,11 +24,6 @@ export default function AboutPage() {
       title: "Tools & Technologies",
       description: "PowerBI, Git, GitHub, JIRA, Docker, HuggingFace, Unix Scripting",
       icon: Cog,
-    },
-    {
-      title: "AI & ML",
-      description: "Generative AI, RAGs, LLM, Classification & Regression Models, Deep Learning, NLP",
-      icon: Brain,
     },
     {
       title: "Data Engineering",
