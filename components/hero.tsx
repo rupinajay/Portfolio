@@ -7,13 +7,13 @@ import { BackgroundBeamsFast } from "@/components/ui/background-beams-fast"
 
 export function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center py-20 text-center overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center py-12 sm:py-20 text-center overflow-hidden px-4">
       <BackgroundBeamsFast />
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-40 h-40 mb-8 relative z-10"
+        className="w-32 h-32 sm:w-40 sm:h-40 mb-6 sm:mb-8 relative z-10"
       >
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rupin-41Fe7CrY6XyWLxmLJjaecXn7Ct7xoL.png"
@@ -22,7 +22,7 @@ export function Hero() {
         />
       </motion.div>
       <motion.h1
-        className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-4 relative z-10"
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-3 sm:mb-4 relative z-10"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ export function Hero() {
         Rupin Ajay
       </motion.h1>
       <motion.p
-        className="text-xl font-semibold text-primary mb-4 relative z-10"
+        className="text-lg sm:text-xl font-semibold text-primary mb-3 sm:mb-4 relative z-10"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -38,7 +38,7 @@ export function Hero() {
         Software Engineer & AI Developer
       </motion.p>
       <motion.p
-        className="max-w-[900px] text-lg text-muted-foreground mb-8 relative z-10"
+        className="max-w-[900px] text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 relative z-10 px-2"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -49,24 +49,24 @@ export function Hero() {
         maybe a little obsessed with making the world a more efficient place through code? That's me. Let's connect!
       </motion.p>
       <motion.div
-        className="flex gap-4 relative z-10"
+        className="flex flex-wrap justify-center gap-3 relative z-10"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Button asChild>
+        <Button className="min-w-[120px]" asChild>
           <a href="mailto:rupinajay@gmail.com">
             <Mail className="mr-2 h-4 w-4" />
             Contact Me
           </a>
         </Button>
-        <Button variant="outline" asChild>
+        <Button className="min-w-[120px]" variant="outline" asChild>
           <a href="https://github.com/rupinajay" target="_blank" rel="noopener noreferrer">
             <Github className="mr-2 h-4 w-4" />
             GitHub
           </a>
         </Button>
-        <Button variant="outline" asChild>
+        <Button className="min-w-[120px]" variant="outline" asChild>
           <a href="https://linkedin.com/rupinajay" target="_blank" rel="noopener noreferrer">
             <Linkedin className="mr-2 h-4 w-4" />
             LinkedIn
