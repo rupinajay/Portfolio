@@ -4,7 +4,6 @@ import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Github, Cpu, Brain, Zap, Code, BarChart, Users, Briefcase, Leaf } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { BackgroundBeams } from "@/components/ui/background-beams"
 
 const projects = [
   {
@@ -141,79 +140,85 @@ export default function ProjectsPage() {
   const [activeProject, setActiveProject] = useState(null)
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4 relative">
-      <BackgroundBeams className="opacity-20" />
-      <div className="relative z-10">
-        <div className="mb-16 text-center">
-          <h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
-            Projects
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my portfolio of AI and data engineering projects. Each project showcases my skills in developing
-            innovative solutions to real-world problems.
-          </p>
-        </div>
+    <div className="max-w-6xl mx-auto py-24 px-4 relative">
+      <div className="relative z-10 mb-20">
+        <h1 className="text-6xl font-bold text-foreground tracking-tight mb-6">
+          Projects
+        </h1>
+        <div className="w-16 h-1 bg-primary mb-12"></div>
+        <p className="text-lg text-foreground/90 max-w-2xl">
+          A collection of my work in AI and data engineering, showcasing solutions that leverage cutting-edge technology to solve real-world problems.
+        </p>
+      </div>
 
-        <div className="space-y-24">
-          {projects.map((project, index) => {
-            const Icon = project.icon
+      <div className="grid grid-cols-1 gap-16">
+        {projects.map((project, index) => {
+          const Icon = project.icon
 
-            return (
-              <div key={project.id} id={project.id} className="relative">
-                <div className="bg-card rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    {Icon && <Icon className="h-6 w-6 text-primary" />}
-                    <h3 className="text-3xl font-bold">{project.title}</h3>
+          return (
+            <div key={project.id} id={project.id} className="relative group">
+              <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border/10 overflow-hidden">
+                <div className="md:flex">
+                  <div className="md:w-1/4 bg-primary/[0.02] p-6 flex justify-center items-start md:items-center border-b md:border-b-0 md:border-r border-border/10">
+                    <div className="w-16 h-16 rounded-lg bg-white shadow-sm flex items-center justify-center">
+                      {Icon && <Icon className="h-8 w-8 text-primary" />}
+                    </div>
                   </div>
+                  
+                  <div className="p-8 md:w-3/4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
+                      <span className="text-xs font-semibold uppercase tracking-wider py-1 px-2 bg-primary/5 text-primary/80 rounded">
+                        {index === 0 ? 'Latest' : ''}
+                      </span>
+                    </div>
+                    <p className="text-foreground/90 font-medium mb-6">{project.description}</p>
 
-                  <p className="text-muted-foreground mb-6">{project.description}</p>
+                    <ul className="space-y-2 mb-6">
+                      {project.details.map((detail, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="text-primary mt-1 opacity-60">•</span>
+                          <span className="text-foreground/80">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  <ul className="space-y-2 mb-6">
-                    {project.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="bg-white text-foreground/70 border-border/20">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="bg-primary/10 hover:bg-primary/20">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-4">
-                    <Button size="sm" variant="outline" asChild>
-                      <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
-                        Source Code
-                      </a>
-                    </Button>
+                    <div className="flex gap-4">
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="gap-2">
+                          <Github className="h-4 w-4" />
+                          <span>View Source</span>
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
-
-                {index < projects.length - 1 && (
-                  <div className="absolute left-1/2 -translate-x-1/2 bottom-[-4rem]">
-                    <div className="h-16 w-px bg-border"></div>
-                  </div>
-                )}
               </div>
-            )
-          })}
-        </div>
+            </div>
+          )
+        })}
+      </div>
 
-        <div className="mt-24 text-center">
-          <p className="text-lg mb-6">Interested in working together?</p>
-          <Button size="lg" asChild>
-            <a href="/contact" className="inline-flex items-center text-lg font-semibold">
-              Get in touch
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
-        </div>
+      <div className="mt-24 border-t border-border/10 pt-16 text-center">
+        <p className="text-lg mb-6 text-foreground/80">
+          Interested in collaborating on a project? <br />
+          I'm always open to discussing new opportunities.
+        </p>
+        <a 
+          href="/contact" 
+          className="inline-flex items-center text-lg text-foreground font-medium hover:text-primary transition-colors group"
+        >
+          <span>Get in touch</span>
+          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+        </a>
       </div>
     </div>
   )
