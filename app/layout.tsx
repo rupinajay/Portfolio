@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "Rupin Ajay - AI Developer & Data Engineer",
   description: "Portfolio of Rupin Ajay - Specializing in AI, ML, and Data Engineering",
-    generator: 'v0.dev'
+    generator: 'Rupin Ajay'
 }
 
 export default function RootLayout({
