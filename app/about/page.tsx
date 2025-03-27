@@ -109,12 +109,12 @@ export default function AboutPage() {
                 <div key={edu.school} className="md:flex gap-8 group">
                   {/* Timeline dot and line */}
                   <div className="hidden md:block relative">
-                    <div className="w-10 h-10 rounded-full bg-white border-4 border-primary/30 group-hover:border-primary transition-colors duration-300 z-10 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-background border-4 border-primary/30 group-hover:border-primary transition-colors duration-300 z-10 flex items-center justify-center">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                   </div>
                   
-                  <div className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-border/10 md:ml-6 flex-1">
+                  <div className="bg-card rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-border/10 md:ml-6 flex-1">
                     <div className="md:flex justify-between items-start">
                       <div>
                         <h3 className="text-xl font-semibold mb-1 text-foreground">{edu.school}</h3>
@@ -158,7 +158,7 @@ export default function AboutPage() {
             return (
               <div 
                 key={index} 
-                className="bg-white rounded-xl shadow-sm border border-border/10 overflow-hidden group hover:shadow-md transition-all duration-300"
+                className="bg-card rounded-xl shadow-sm border border-border/10 overflow-hidden group hover:shadow-md transition-all duration-300"
               >
                 <div className="p-8">
                   <div className="flex items-center gap-4 mb-4">

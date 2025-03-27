@@ -22,7 +22,7 @@ export default function ContactPage() {
 
       <div className="grid gap-10 md:grid-cols-2">
         <div className="space-y-8">
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-border/10">
+          <div className="bg-card p-8 rounded-lg shadow-sm border border-border/10">
             <h2 className="text-xl font-semibold mb-6 text-foreground flex items-center">
               <MessageSquare className="h-5 w-5 text-primary mr-2" />
               Contact Information
@@ -65,14 +65,14 @@ export default function ContactPage() {
             </div>
           </div>
           
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-border/10">
+          <div className="bg-card p-8 rounded-lg shadow-sm border border-border/10">
             <h2 className="text-xl font-semibold mb-4 text-foreground">Response Time</h2>
             <p className="text-foreground/80">I typically respond to all inquiries within 24-48 hours during business days.</p>
           </div>
         </div>
 
         <div>
-          <Card className="border border-border/10 shadow-sm bg-white rounded-lg overflow-hidden">
+          <Card className="border border-border/10 shadow-sm bg-card rounded-lg overflow-hidden">
             <div className="p-6 border-b border-border/10">
               <h2 className="text-xl font-semibold text-foreground">Send a Message</h2>
               <p className="text-sm text-foreground/80 mt-1">Fill out the form below to get in touch.</p>

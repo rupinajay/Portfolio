@@ -143,7 +143,7 @@ export default function BlogPage() {
                 key={post.id}
                 className="group"
               >
-                <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                <div className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 h-full flex flex-col">
                   <Link href={`/blog/${post.slug}`} className="relative block overflow-hidden h-48">
                     <div className="h-48 w-full relative overflow-hidden">
                       <Image 
@@ -154,7 +154,7 @@ export default function BlogPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                       
-                      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
+                      <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm rounded-full p-2">
                         <CategoryIcon className="h-5 w-5 text-primary" />
                       </div>
                     </div>
@@ -204,7 +204,7 @@ export default function BlogPage() {
           })}
         </div>
       ) : (
-        <div className="bg-white rounded-lg p-10 border border-border/10 text-center">
+        <div className="bg-card rounded-lg p-10 border border-border/10 text-center">
           <h3 className="text-lg font-medium mb-2">No results found</h3>
           <p className="text-muted-foreground mb-6">No posts matched your search for "{searchQuery}".</p>
           <Button variant="outline" onClick={() => setSearchQuery("")}>

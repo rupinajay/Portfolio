@@ -157,10 +157,10 @@ export default function ProjectsPage() {
 
           return (
             <div key={project.id} id={project.id} className="relative group">
-              <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border/10 overflow-hidden">
+              <div className="bg-card rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border/10 overflow-hidden">
                 <div className="md:flex">
-                  <div className="md:w-1/4 bg-primary/[0.02] p-6 flex justify-center items-start md:items-center border-b md:border-b-0 md:border-r border-border/10">
-                    <div className="w-16 h-16 rounded-lg bg-white shadow-sm flex items-center justify-center">
+                  <div className="md:w-1/4 bg-muted/50 p-6 flex justify-center items-start md:items-center border-b md:border-b-0 md:border-r border-border/10">
+                    <div className="w-16 h-16 rounded-lg bg-background shadow-sm flex items-center justify-center">
                       {Icon && <Icon className="h-8 w-8 text-primary" />}
                     </div>
                   </div>
@@ -185,7 +185,7 @@ export default function ProjectsPage() {
 
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="bg-white text-foreground/70 border-border/20">
+                        <Badge key={tech} variant="outline" className="bg-background text-foreground/70 border-border/20">
                           {tech}
                         </Badge>
                       ))}
